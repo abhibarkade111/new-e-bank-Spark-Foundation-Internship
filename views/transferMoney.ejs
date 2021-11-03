@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>New E-Bank</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="nav-background">
+            <div class="mobile-logo ">
+                <h2><b>New E-Bank</b></h2>
+            </div>
+            <div class="mobile-nav">
+
+                <div class="nav-top">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/customers">Customers</a>
+                        </li>
+                        <li>
+                            <a href="/user">Create User</a>
+                        </li>
+                        <li>
+                            <a href="/transfer">Transfer Money</a>
+                        </li>
+
+                        <li>
+                            <a href="/history">Transaction History</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="contact flex items-center">
+                    <img src="./icons/phone.svg" alt="">
+                    <div>
+                        <h5>Call us: (+91) 123 456 789</h5>
+                        <h6>E-mail : newebank@gmail.com</h6>
+                    </div>
+                </div>
+                <div class="time flex items-center">
+                    <img src="./icons/clock.svg" alt="">
+                    <div>
+                        <h5>Working Hours:</h5>
+                        <h6>Mon - Sat (8.00am - 6.00pm)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-bar-chart">
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" />
+                </svg>
+            </div>
+            <div class="site-content">
+                <header class="topbar">
+                    <div class="container flex justify-between items-center">
+                        <div class="icons">
+                            <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                            <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                            <a href="#"><img src="./icons/google.svg" alt=""></a>
+                            <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                            <a href="#"><img src="./icons/search.svg" alt=""></a>
+                        </div>
+                        <div class="auth flex items-center">
+                            <div>
+                                <img src="./icons/user-icon.svg" alt="">
+                                <a href="/transfer">Transfer</a>
+                            </div>
+                            <span class="divider">|</span>
+                            <div>
+                                <img src="./icons/edit.svg" alt="">
+                                <a href=" /user">Register Account</a>
+                            </div>
+                            <span class="divider">|</span>
+
+                        </div>
+                    </div>
+                </header>
+
+                <nav>
+                    <div class="top">
+                        <div class="container flex justify-between">
+                            <div class="contact flex items-center">
+                                <img src="./icons/phone.svg" alt="">
+                                <div>
+                                    <h5>Call US: (+91) 123 456 789</h5>
+                                    <h6>E-mail : newebank@gmail.com</h6>
+                                </div>
+                            </div>
+                            <div class="branding">
+                                <h2><b>New E-Bank</b></h2>
+                            </div>
+                            <div class="time flex items-center">
+                                <img src="./icons/clock.svg" alt="">
+                                <div>
+                                    <h5>Working Hours:</h5>
+                                    <h6>Mon - Sat (8.00am - 6.00pm)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar magic-shadow">
+                        <div class="container flex justify-center">
+                            <a href="/" >Home</a>
+                            <a href="/customers">Customers</a>
+                            <a href="/user">Register Account</a>
+                            <a href="/transfer" class="active">Transfer Money</a>
+                            <a href="/history">Transaction History</a>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <section class="forms forms-request container">
+                    <h1 class="heading_user">Transfer Money</h1>
+                    <div class="container">
+
+                        <form id="form" action="/transfer" method="post">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+
+
+                            <!-- <form action="/transfer">
+
+                                <select name="cars" id="cars">
+                                    <optgroup label="Select Your Account">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                    </optgroup>
+                                </select>
+                                <br><br>
+                                <input type="submit" value="Submit">
+                            </form> -->
+
+                            <%if(typeof alert != 'undefined'){%>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+                                        <% alert%>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                      </div>
+                            <%}%>
+
+                            
+                           
+
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="labelText">Select Your Account</div>
+                                        <div class="form-outline">
+                                            <select name="transferFrom" id="cars" class="form-controlNew">
+                                                <optgroup label="Select Your Account">
+                                                    <%customersList.forEach(customer=>{%>
+                                                    <option value="<%= customer.fname%>">
+                                                        <%= customer.fname%>
+                                                    </option>
+                                                    <%})%>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="labelText">Select Recipent Account</div>
+                                        <div class="form-outline">
+                                            <select name="transferTo" id="cars" class="form-controlNew">
+                                                <optgroup label="Select Recipent Account">
+                                                    <%customersList.forEach(customer=>{%>
+                                                    <option value="<%= customer.fname%>">
+                                                        <%= customer.fname%>
+                                                    </option>
+                                                    <%})%>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+
+                                    <!-- Text input -->
+
+
+                                    <!-- Email input -->
+
+                                    <div class="form-outline mb-4">
+                                        <input type="number" id="enterMoney" name="transferMoney"
+                                            placeholder="Enter Amount to Transfer" class="form-control" />
+                                        <label id="errorAcc" for="text"></label>
+                                    </div>
+
+
+                                    <!-- Submit button -->
+                                    <div class="form-check d-flex justify-content-center mb-4 btn_submit_center">
+                                        <button type="submit" id="submit"
+                                            class="btn btn-primary btn_submit  btn-block mb-4">Transfer</button>
+                                    </div>
+
+                        </form>
+                    </div>
+                </section>
+
+            
+
+
+
+
+            <footer class="copyright">
+                <div>
+                    Copyright © 2021 .All rights reserved by New E-Bank <a href="https://abhi-barkade.web.app">Developed
+                        by Abhishek Barkade</a>
+                </div>
+            </footer>
+        </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
+    <script>
+        const submit = document.getElementById('submit');
+        const enterMoney = document.getElementById('enterMoney');
+        submit.addEventListener("click", function() {
+            if(enterMoney.value===""){
+               alert("Enter the Amount")
+            }
+            else{
+                alert("Money Transfer Succesfully")
+            }
+});
+    </script>
+</body>
+
+</html>
