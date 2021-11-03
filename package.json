@@ -1,12 +1,11 @@
 {
-  
   "name": "BankWebsite",
   "version": "1.0.0",
   "main": "index.js",
   "author": "abhishek barkade",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"  
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -15,5 +14,4 @@
     "express-validator": "^6.13.0",
     "mongoose": "^6.0.8"
   }
-  
 }
